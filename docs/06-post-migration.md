@@ -34,13 +34,13 @@ Settings > Branches > Add branch protection rule
 | Configuración | Recomendado |
 |---|---|
 | Branch name pattern | `main` |
-| Require a pull request before merging | ✅ |
-| Require approvals | ✅ (mínimo 1) |
-| Dismiss stale pull request approvals | ✅ |
-| Require status checks to pass | ✅ |
-| Require branches to be up to date | ✅ |
-| Include administrators | ⚠️ Según política |
-| Restrict who can push | ⚠️ Según política |
+| Require a pull request before merging | Si |
+| Require approvals | Si (mínimo 1) |
+| Dismiss stale pull request approvals | Si |
+| Require status checks to pass | Si |
+| Require branches to be up to date | Si |
+| Include administrators | Según política |
+| Restrict who can push | Según política |
 
 ### CODEOWNERS
 
@@ -87,12 +87,12 @@ Si la organización tiene GHAS habilitado:
 Settings > Code security and analysis
 ```
 
-- **Dependency graph**: ✅ Habilitar
-- **Dependabot alerts**: ✅ Habilitar
-- **Dependabot security updates**: ✅ Habilitar
-- **Code scanning**: ✅ Configurar con CodeQL
-- **Secret scanning**: ✅ Habilitar
-- **Push protection**: ✅ Habilitar
+- **Dependency graph**: Habilitar
+- **Dependabot alerts**: Habilitar
+- **Dependabot security updates**: Habilitar
+- **Code scanning**: Configurar con CodeQL
+- **Secret scanning**: Habilitar
+- **Push protection**: Habilitar
 
 ---
 
@@ -108,7 +108,7 @@ Settings > Environments > New environment
 
 | Configuración | Valor |
 |---|---|
-| Protection rules | ✅ Required reviewers |
+| Protection rules | Required reviewers |
 | Reviewers | Lista de aprobadores |
 | Wait timer | Opcional (ej: 15 min) |
 | Deployment branches | `main` solamente |
@@ -239,10 +239,10 @@ jobs:
 
 | Herramienta | Issues | MRs/PRs | Comentarios | Labels |
 |---|---|---|---|---|
-| **GitHub Importer** (UI) | ✅ | ❌ | Parcial | ✅ |
-| **gl2gh** (CLI) | ✅ | ✅ | ✅ | ✅ |
-| **node-gitlab-2-github** | ✅ | ✅ | ✅ | ✅ |
-| **Manual** | ✅ | ❌ | ❌ | ✅ |
+| **GitHub Importer** (UI) | Si | No | Parcial | Si |
+| **gl2gh** (CLI) | Si | Si | Si | Si |
+| **node-gitlab-2-github** | Si | Si | Si | Si |
+| **Manual** | Si | No | No | Si |
 
 ### Con GitHub CLI
 
@@ -315,4 +315,4 @@ Agregar los rangos de IP de:
 
 ## Siguiente paso
 
-➡️ [Fase 7: Troubleshooting](07-troubleshooting.md)
+[Fase 7: Troubleshooting](07-troubleshooting.md)

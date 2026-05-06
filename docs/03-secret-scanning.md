@@ -155,10 +155,10 @@ gitleaks detect --source . --report-format json --report-path leaks.json
 
 LEAKS=$(jq length leaks.json)
 if [ "$LEAKS" -gt 0 ]; then
-    echo "⚠️  Se encontraron $LEAKS secretos. Limpiar antes de hacer push."
+    echo "ADVERTENCIA: Se encontraron $LEAKS secretos. Limpiar antes de hacer push."
     jq -r '.[] | "  - \(.RuleID): \(.File):\(.StartLine)"' leaks.json
 else
-    echo "✅ Sin secretos detectados. Listo para push a GitHub."
+    echo "OK: Sin secretos detectados. Listo para push a GitHub."
     git push github --all
     git push github --tags
 fi
@@ -168,4 +168,4 @@ fi
 
 ## Siguiente paso
 
-➡️ [Fase 4: Assessment de Pipelines](04-pipeline-assessment.md)
+[Fase 4: Assessment de Pipelines](04-pipeline-assessment.md)

@@ -36,7 +36,7 @@ git remote add github git@github.com:ORG/REPO.git
 git remote -v
 ```
 
-> **⚠️ No hacer push todavía.** Primero completar el [escaneo de secretos](03-secret-scanning.md).
+> **No hacer push todavía.** Primero completar el [escaneo de secretos](03-secret-scanning.md).
 
 ### Si necesitas clonar desde GitLab
 
@@ -49,7 +49,7 @@ cd REPO
 git remote add github git@github.com:ORG/REPO.git
 ```
 
-> **⚠️ No hacer push todavía.** Primero completar el [escaneo de secretos](03-secret-scanning.md).
+> **No hacer push todavía.** Primero completar el [escaneo de secretos](03-secret-scanning.md).
 
 ---
 
@@ -74,7 +74,7 @@ Ideal para migraciones simples desde la interfaz web.
 - NO migra objetos de Git LFS
 - El repositorio de GitLab debe ser accesible desde internet
 
-> **⚠️ Nota sobre secretos:** GitHub Importer importa directamente sin pasar por escaneo local. Si Push Protection detecta secretos, la importación puede fallar. Para repositorios con posibles secretos en la historia, usar el **Método A** (CLI) que permite escanear antes de hacer push.
+> **Nota sobre secretos:** GitHub Importer importa directamente sin pasar por escaneo local. Si Push Protection detecta secretos, la importación puede fallar. Para repositorios con posibles secretos en la historia, usar el **Método A** (CLI) que permite escanear antes de hacer push.
 
 ---
 
@@ -92,7 +92,7 @@ cd REPO.git
 gh repo create ORG/REPO --private
 ```
 
-> **⚠️ No hacer push todavía.** Para repositorios con `--bare`, escanear secretos antes de continuar. Ver [Fase 3](03-secret-scanning.md).
+> **No hacer push todavía.** Para repositorios con `--bare`, escanear secretos antes de continuar. Ver [Fase 3](03-secret-scanning.md).
 
 ---
 
@@ -100,9 +100,9 @@ gh repo create ORG/REPO --private
 
 | | `--all` + `--tags` | `--mirror` |
 |---|---|---|
-| Ramas y tags | ✅ Sí | ✅ Sí |
-| Refs internas de GitLab (MRs) | ❌ No (no se necesitan) | ✅ Sí (pueden causar errores) |
-| Elimina en destino lo que no exista en origen | ❌ No | ⚠️ Sí |
+| Ramas y tags | Sí | Sí |
+| Refs internas de GitLab (MRs) | No (no se necesitan) | Sí (pueden causar errores) |
+| Elimina en destino lo que no exista en origen | No | Sí |
 | Riesgo | Bajo | Alto |
 
 **Recomendación:** Usar `--all` + `--tags`. El modo `--mirror` puede fallar con refs internas de GitLab que GitHub rechaza.
@@ -169,4 +169,4 @@ gh repo view ORG/REPO --web
 
 ## Siguiente paso
 
-➡️ [Fase 3: Escaneo de Secretos y Push a GitHub](03-secret-scanning.md)
+[Fase 3: Escaneo de Secretos y Push a GitHub](03-secret-scanning.md)

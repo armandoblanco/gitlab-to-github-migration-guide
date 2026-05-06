@@ -57,10 +57,10 @@ El archivo `tmp/audit/audit_summary.md` contiene:
 
 | Resultado | Significado |
 |---|---|
-| ✅ Successful | 100% del pipeline convertido automáticamente |
-| ⚠️ Partially successful | Estructura convertida, pero algunos items requieren ajuste manual |
-| ❌ Unsupported | Tipo de pipeline no soportado por Actions Importer |
-| 💥 Failed | Error fatal en la conversión (pipeline mal configurado o error interno) |
+| Successful | 100% del pipeline convertido automáticamente |
+| Partially successful | Estructura convertida, pero algunos items requieren ajuste manual |
+| Unsupported | Tipo de pipeline no soportado por Actions Importer |
+| Failed | Error fatal en la conversión (pipeline mal configurado o error interno) |
 
 **Build steps:**
 
@@ -187,19 +187,19 @@ El agente generará un reporte con:
 
 | Nivel | Criterio |
 |---|---|
-| 🟢 **Simple** | Jobs con `script`, `image`, `variables`. Sin includes ni DAG complejo |
-| 🟡 **Media** | Usa `services`, `artifacts`, `cache`, `needs`, `rules` con condiciones |
-| 🔴 **Alta** | Usa `include`, `extends`, child pipelines, `parallel:matrix`, `resource_group`, `when:delayed` |
+| **Simple** | Jobs con `script`, `image`, `variables`. Sin includes ni DAG complejo |
+| **Media** | Usa `services`, `artifacts`, `cache`, `needs`, `rules` con condiciones |
+| **Alta** | Usa `include`, `extends`, child pipelines, `parallel:matrix`, `resource_group`, `when:delayed` |
 
 #### 3. Matriz de compatibilidad
 
 | Feature de GitLab | Equivalente en GitHub Actions | Estado |
 |---|---|---|
-| `stages` + orden implícito | `jobs` con `needs` explícitos | ✅ Compatible |
-| `services: postgres` | `services:` con health checks | ⚠️ Requiere ajustes |
-| `include: template` | Expandir inline o reusable workflow | ⚠️ Manual |
-| `when: delayed` | Sin equivalente | ❌ No soportado |
-| `coverage:` regex | Sin equivalente nativo | ❌ Marketplace |
+| `stages` + orden implícito | `jobs` con `needs` explícitos | Compatible |
+| `services: postgres` | `services:` con health checks | Requiere ajustes |
+| `include: template` | Expandir inline o reusable workflow | Manual |
+| `when: delayed` | Sin equivalente | No soportado |
+| `coverage:` regex | Sin equivalente nativo | Marketplace |
 
 #### 4. Riesgos identificados
 
@@ -255,19 +255,19 @@ grep -E "when: delayed|resource_group:|coverage:" .gitlab-ci.yml
 
 | Si el pipeline tiene... | Complejidad |
 |---|---|
-| Solo `script`, `image`, `variables` | 🟢 Simple |
-| + `services`, `artifacts`, `cache`, `needs` | 🟡 Media |
-| + `include`, `extends`, `trigger`, `parallel:matrix` | 🔴 Alta |
+| Solo `script`, `image`, `variables` | Simple |
+| + `services`, `artifacts`, `cache`, `needs` | Media |
+| + `include`, `extends`, `trigger`, `parallel:matrix` | Alta |
 
 ---
 
 ## Ejemplo de reporte de assessment
 
 ```markdown
-## 📋 Assessment: proyecto-api/.gitlab-ci.yml
+## Assessment: proyecto-api/.gitlab-ci.yml
 
 ### Resumen
-- **Complejidad**: 🟡 Media
+- **Complejidad**: Media
 - **Stages**: 4 (build, test, quality, deploy)
 - **Jobs**: 6
 - **Variables CI_***: 8 (requieren mapeo)
@@ -275,22 +275,22 @@ grep -E "when: delayed|resource_group:|coverage:" .gitlab-ci.yml
 - **Secrets detectados**: 0
 
 ### Features compatibles
-- ✅ stages → jobs con needs
-- ✅ script → run
-- ✅ image → container/setup-*
-- ✅ variables → env
-- ✅ needs → needs
-- ✅ allow_failure → continue-on-error
-- ✅ environment → environment
+- stages → jobs con needs
+- script → run
+- image → container/setup-*
+- variables → env
+- needs → needs
+- allow_failure → continue-on-error
+- environment → environment
 
 ### Features que requieren ajustes
-- ⚠️ services: postgres → services con ports y health checks (localhost en vez de hostname)
-- ⚠️ artifacts:paths → actions/upload-artifact@v4 + download-artifact@v4
-- ⚠️ cache: → actions/cache@v4 o cache integrado de setup-node
-- ⚠️ when: manual → workflow_dispatch o environment con protection rules
+- services: postgres → services con ports y health checks (localhost en vez de hostname)
+- artifacts:paths → actions/upload-artifact@v4 + download-artifact@v4
+- cache: → actions/cache@v4 o cache integrado de setup-node
+- when: manual → workflow_dispatch o environment con protection rules
 
 ### Features sin equivalente
-- ❌ coverage: regex → no nativo, usar action del marketplace
+- coverage: regex → no nativo, usar action del marketplace
 
 ### Esfuerzo estimado
 - Conversión del pipeline: 1-2 horas
@@ -335,4 +335,4 @@ grep -E "when: delayed|resource_group:|coverage:" .gitlab-ci.yml
 
 ## Siguiente paso
 
-➡️ [Fase 5: Migración de Pipelines](05-pipeline-migration.md)
+[Fase 5: Migración de Pipelines](05-pipeline-migration.md)

@@ -196,10 +196,10 @@ Error: connect ECONNREFUSED postgres:5432
 
 **Solución:**
 ```yaml
-# ❌ Incorrecto (funciona en GitLab)
+# Incorrecto (funciona en GitLab)
 DATABASE_URL: postgres://user:pass@postgres:5432/db
 
-# ✅ Correcto (GitHub Actions)
+# Correcto (GitHub Actions)
 DATABASE_URL: postgres://user:pass@localhost:5432/db
 ```
 

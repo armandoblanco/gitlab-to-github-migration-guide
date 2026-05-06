@@ -117,27 +117,27 @@ La siguiente tabla muestra el estado de conversión automática de cada feature 
 
 | Feature de GitLab | Conversión en GitHub Actions | Estado |
 |---|---|---|
-| `after_script` | `jobs.<job_id>.steps` | ✅ Soportado |
-| `auto_cancel_pending_pipelines` | `concurrency` | ✅ Soportado |
-| `before_script` | `jobs.<job_id>.steps` | ✅ Soportado |
-| `build_timeout` / `timeout` | `jobs.<job_id>.timeout-minutes` | ✅ Soportado |
-| `default` | N/A | ✅ Soportado |
-| `image` | `jobs.<job_id>.container` | ✅ Soportado |
-| `job` | `jobs.<job_id>` | ✅ Soportado |
-| `needs` | `jobs.<job_id>.needs` | ✅ Soportado |
-| `resource_group` | `jobs.<job_id>.concurrency` | ✅ Soportado |
-| `schedule` | `on.schedule` | ✅ Soportado |
-| `script` | `jobs.<job_id>.steps` | ✅ Soportado |
-| `stages` | `jobs` | ✅ Soportado |
-| `tags` | `jobs.<job_id>.runs-on` | ✅ Soportado |
-| `variables` | `env`, `jobs.<job_id>.env` | ✅ Soportado |
-| `environment` | `jobs.<job_id>.environment` | ⚠️ Parcial |
-| `include` | Merge en un solo grafo de jobs | ⚠️ Parcial |
-| `only` / `except` | `jobs.<job_id>.if` | ⚠️ Parcial |
-| `parallel` | `jobs.<job_id>.strategy` | ⚠️ Parcial |
-| `rules` | `jobs.<job_id>.if` | ⚠️ Parcial |
-| `services` | `jobs.<job_id>.services` | ⚠️ Parcial |
-| `workflow` | `if` | ⚠️ Parcial |
+| `after_script` | `jobs.<job_id>.steps` | Soportado |
+| `auto_cancel_pending_pipelines` | `concurrency` | Soportado |
+| `before_script` | `jobs.<job_id>.steps` | Soportado |
+| `build_timeout` / `timeout` | `jobs.<job_id>.timeout-minutes` | Soportado |
+| `default` | N/A | Soportado |
+| `image` | `jobs.<job_id>.container` | Soportado |
+| `job` | `jobs.<job_id>` | Soportado |
+| `needs` | `jobs.<job_id>.needs` | Soportado |
+| `resource_group` | `jobs.<job_id>.concurrency` | Soportado |
+| `schedule` | `on.schedule` | Soportado |
+| `script` | `jobs.<job_id>.steps` | Soportado |
+| `stages` | `jobs` | Soportado |
+| `tags` | `jobs.<job_id>.runs-on` | Soportado |
+| `variables` | `env`, `jobs.<job_id>.env` | Soportado |
+| `environment` | `jobs.<job_id>.environment` | Parcial |
+| `include` | Merge en un solo grafo de jobs | Parcial |
+| `only` / `except` | `jobs.<job_id>.if` | Parcial |
+| `parallel` | `jobs.<job_id>.strategy` | Parcial |
+| `rules` | `jobs.<job_id>.if` | Parcial |
+| `services` | `jobs.<job_id>.services` | Parcial |
+| `workflow` | `if` | Parcial |
 
 > Referencia completa: [github/gh-actions-importer — GitLab](https://github.com/github/gh-actions-importer/blob/main/docs/gitlab/index.md)
 
@@ -466,4 +466,4 @@ mi-repo/
 
 ## Siguiente paso
 
-➡️ [Fase 6: Post-Migración](06-post-migration.md)
+[Fase 6: Post-Migración](06-post-migration.md)

@@ -220,9 +220,9 @@ git push github --tags --force
 
 | | `--all` + `--tags` | `--mirror` |
 |---|---|---|
-| Ramas y tags | ✅ Sí | ✅ Sí |
-| Refs internas de GitLab (MRs, etc.) | ❌ No (no se necesitan) | ✅ Sí (pueden causar errores) |
-| Elimina en destino lo que no exista en origen | ❌ No | ⚠️ Sí |
+| Ramas y tags | Sí | Sí |
+| Refs internas de GitLab (MRs, etc.) | No (no se necesitan) | Sí (pueden causar errores) |
+| Elimina en destino lo que no exista en origen | No | Sí |
 | Riesgo | Bajo | Alto |
 
 `--mirror` puede fallar con refs internas de GitLab que GitHub rechaza. Se recomienda `--all` + `--tags` para migraciones.

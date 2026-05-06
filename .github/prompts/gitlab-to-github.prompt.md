@@ -124,13 +124,13 @@ Aplica las siguientes reglas de transformación:
 ```markdown
 ## 📊 Reporte de Migración
 
-### ✅ Transformado Correctamente
+### Transformado Correctamente
 - [Lista de elementos que se transformaron sin problemas]
 
-### ⚠️ Transformado con Advertencias
+### Transformado con Advertencias
 - [Elementos transformados pero con diferencias de comportamiento]
 
-### ❌ No Transformable / Sin Equivalente Directo
+### No Transformable / Sin Equivalente Directo
 - [Elementos de GitLab que NO tienen equivalente en GitHub Actions]
 - [Incluir por qué no es posible y qué alternativas existen, si las hay]
 
@@ -172,7 +172,7 @@ Aplica las siguientes reglas de transformación:
 
 1. **Si no estás seguro de algo, dilo**. No asumas. Reporta la incertidumbre.
 2. **No inventes actions** que no existan en el marketplace. Si mencionas una action, debe ser real.
-3. **Si una feature de GitLab no tiene equivalente**, no la ignores — repórtala en la sección "❌ No Transformable".
+3. **Si una feature de GitLab no tiene equivalente**, no la ignores — repórtala en la sección "No Transformable".
 4. **No omitas configuración** del YAML original. Cada línea del `.gitlab-ci.yml` debe tener un destino en el workflow o en el reporte.
 5. **Mantén los comentarios** del YAML original como referencia cuando sea útil.
 6. **Valida la sintaxis YAML** del output. El workflow generado debe ser YAML válido.

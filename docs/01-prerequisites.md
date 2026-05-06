@@ -119,20 +119,20 @@ Si la organización destino es parte de una **GitHub Enterprise con Enterprise M
 
 | IdP | SAML | OIDC | SCIM |
 |---|---|---|---|
-| Microsoft Entra ID | ✅ | ✅ | ✅ |
-| Okta | ✅ | ❌ | ✅ |
-| PingFederate | ✅ | ❌ | ✅ |
+| Microsoft Entra ID | Si | Si | Si |
+| Okta | Si | No | Si |
+| PingFederate | Si | No | Si |
 
 ### Estructura organizacional
 
 ```
-📦 Enterprise
-├── 🏢 Organización A
-│   ├── 📁 repo-1 (privado)
-│   └── 📁 repo-2 (interno)
-├── 🏢 Organización B
-│   └── 📁 repo-3 (privado)
-└── 👥 Usuarios EMU (provisioned via IdP)
+Enterprise
+├── Organización A
+│   ├── repo-1 (privado)
+│   └── repo-2 (interno)
+├── Organización B
+│   └── repo-3 (privado)
+└── Usuarios EMU (provisioned via IdP)
 ```
 
 > **Interno** vs **Privado**: Los repositorios **internos** son visibles para todos los miembros de la Enterprise. Los **privados** solo para quienes tienen acceso explícito.
@@ -164,4 +164,4 @@ Si la organización destino es parte de una **GitHub Enterprise con Enterprise M
 
 ## Siguiente paso
 
-➡️ [Fase 2: Clonar y Preparar el Repositorio](02-repository-migration.md)
+[Fase 2: Clonar y Preparar el Repositorio](02-repository-migration.md)
